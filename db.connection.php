@@ -9,10 +9,11 @@ function createDbConnection(){
 
     try{
         $dbcon = new PDO("mysql:host=$host;dbname=$db",$username, $pw);
-            echo "Onnistui";
+            return $dbcon;
            
         }
         catch(PDOException $e){
             echo $e ->getMessage();
         }
+        return null;
 }
